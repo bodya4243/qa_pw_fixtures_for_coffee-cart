@@ -1,7 +1,8 @@
 import { test } from '../fixtures/fixtures';
-import {priceFormatStr} from '../../src/common/getPriseForQuantity';
+import {priceFormatStr} from '../../src/common/helpers/getPriceForQuantity';
+import { priceObject } from '../../src/constants';
 
 test('Check Cappuccino cup has correct cost', async ({ menuPage }) => {
   await menuPage.open();
-  await menuPage.assertCappuccinoCupCostHasValue(priceFormatStr(19.00));
+  await menuPage.assertCappuccinoCupCostHasValue(priceFormatStr(priceObject.Cappuccino));
 });

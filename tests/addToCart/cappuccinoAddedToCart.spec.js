@@ -1,5 +1,6 @@
 import { test } from '../fixtures/fixtures';
-import { priceFormatStr, unitPriceFormatStr} from '../../src/common/getPriseForQuantity';
+import {priceObject} from '../../src/constants'
+import { priceFormatStr, unitPriceFormatStr} from '../../src/common/helpers/getPriceForQuantity';
 
 test('Check Cappuccino correctly added to the Cart', async ({ menuPage, cartPage }) => {
   await menuPage.open();
@@ -9,6 +10,6 @@ test('Check Cappuccino correctly added to the Cart', async ({ menuPage, cartPage
   await cartPage.waitForLoading();
 
   await cartPage.assertCappuccinoNameIsContainsCorrectText();
-  await cartPage.assertCappuccinoUnitContainsCorrectText(unitPriceFormatStr(19.00, 1));
-  await cartPage.assertCappuccinoTotalCostContainsCorrectText(priceFormatStr(19.00));
+  await cartPage.assertCappuccinoUnitContainsCorrectText(unitPriceFormatStr(priceObject.Cappuccino, 1));
+  await cartPage.assertCappuccinoTotalCostContainsCorrectText(priceFormatStr(priceObject.Cappuccino));
 });
