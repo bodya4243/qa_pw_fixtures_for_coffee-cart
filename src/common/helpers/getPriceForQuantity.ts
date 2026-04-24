@@ -1,5 +1,3 @@
-import {priceObject} from '../../constants'
-
 export function unitPriceFormatStr(price: number, quantity: number) {
     return `${(price).toFixed(2)} x ${quantity}`;
 }

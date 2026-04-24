@@ -1,6 +1,6 @@
 import { test } from '../fixtures/fixtures';
 import { priceObject } from '../../src/constants';
-import { priceFormatStr, totalPriceFormatStr } from '../../src/common/helpers/getPriceForQuantity';
+import { totalPriceFormatStr } from '../../src/common/helpers/getPriceForQuantity';
 
 test('Assert cart updated correctly after clicking plus for drinks', async ({
     menuPage,
@@ -22,7 +22,7 @@ test('Assert cart updated correctly after clicking plus for drinks', async ({
 
     await cartPage.clickAddOneCappuccinoButton();
 
-    await cartPage.assertCappuccinoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Espresso, 2));
+    await cartPage.assertCappuccinoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Cappuccino, 2));
     await cartPage.assertEspressoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Espresso, 2));
 
     await cartPage.assertTotalCheckoutContainsValue(totalPriceFormatStr(58));

@@ -1,5 +1,8 @@
 import { test } from '../fixtures/fixtures';
-import { priceFormatStr, unitPriceFormatStr} from '../../src/common/helpers/getPriceForQuantity';
+import {
+    priceFormatStr,
+    unitPriceFormatStr,
+} from '../../src/common/helpers/getPriceForQuantity';
 import { priceObject } from '../../src/constants';
 
 test('Check Espresso correctly added to the Cart', async ({ menuPage, cartPage }) => {

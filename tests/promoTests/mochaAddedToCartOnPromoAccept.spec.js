@@ -22,6 +22,6 @@ test('Assert discounted Mocha added to the Cart after promo accepting', async ({
 
     await cartPage.assertEspressoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Espresso));
     await cartPage.assertDiscountedMochaTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Mocha));
-    await cartPage.assertCappuccinoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Espresso));
+    await cartPage.assertCappuccinoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Cappuccino));
     await cartPage.assertAmericanoTotalCostContainsCorrectText(totalPriceFormatStr(priceObject.Americano));
 });
